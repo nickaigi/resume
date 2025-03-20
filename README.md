@@ -7,9 +7,9 @@
 
         $ aspell -t -c main.tex
  
- - run `xelatex`
+ - run `pdflatex`
 
-        $ xelatex main.tex
+        $ pdflatex main.tex
  
 
 A `PDF` file will have been in the same directory as `main.tex`
