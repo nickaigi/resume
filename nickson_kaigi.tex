@@ -1,14 +1,33 @@
 \documentclass[11pt]{article} % fontsize 10pt/11pt/12pt
-
 \usepackage[margin=1in, a4paper]{geometry}
-\setcounter{secnumdepth}{0} % remove section numbering
 \usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{calc}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Nickson Kaigi - Resume},
+}
+
+\setcounter{secnumdepth}{0} % remove section numbering
 \titlespacing{\subsection}{0pt}{*0}{*0} % remove vertical spacing above and below
 \titlespacing{\subsubsection}{0pt}{*0}{*0}
 \titleformat{\section}{\large\bfseries\uppercase}{}{}{}[\titlerule]
 \titleformat*{\subsubsection}{\large\itshape}
-\usepackage{enumitem}
-\setlist[itemize]{noitemsep,left=0pt .. \parindent}
+%\setlist[itemize]{noitemsep,left=0pt .. \parindent}
+
+\setlist[itemize]{
+    noitemsep,          % No extra space between items
+    topsep=4pt,         % Space above/below list
+    leftmargin=1.5em    % Indentation
+}
+
+\newcommand \techstack [1]
+    {\small\textit{Tech Stack: {#1}}} % New tech stack command
+
 \pagestyle{empty} % remove page number
 \pdfgentounicode=1
 
@@ -24,133 +43,142 @@
     \end{minipage} \hfill
     \begin{minipage}{0.4\textwidth}
         \raggedleft
-        Email: nickaigi@gmail.com \\
+        Email: \href{mailto:nickaigi@gmail.com}{nickaigi@gmail.com} \\
         Mobile: +254 724 708 852 \\
-        LinkedIn: linkedin.com/in/nickson-kaigi \\
-        GitHub: github.com/nickaigi
+        LinkedIn: \href{https://www.linkedin.com/in/nickson-kaigi/}{linkedin.com/in/nickson-kaigi} \\
+        GitHub: \href{https://github.com/nickaigi}{github.com/nickaigi}
     \end{minipage}
 \end{center}
 
-\section{Professional Summary}
-%=============================%
-Senior Full-Stack Engineer | Python · Agile · Cloud (AWS)
-10+ years of experience building scalable SaaS platforms, data-intensive applications, and microservices (Django, FastAPI, AWS Lambda). Proven track record of optimizing databases (30\% faster queries), leading cross-functional teams, and delivering high-impact solutions for e-commerce, fintech, and open-source projects.
+\section{Professional Profile}
+%============================%
+\begin{itemize}
+    \item Results-driven \textbf{Full-Stack Python Engineer} with decade of experience building \textbf{high-performance SaaS solutions}
+    \item Specialized in \textbf{Database optimization}, \textbf{CI/CD pipelines}, and \textbf{API integrations}
+    \item Adept at leading technical projects from concept to deployment using \textbf{Agile methodologies} and \textbf{cloud architectures}
+\end{itemize}
 
+\section{Technical Expertise}
+%===========================%
+\begin{description}
+    \item[Backend] Python, Django, FastAPI, Django REST Framework, Celery.
+    \item[Frontend] React, Next.js, jQuery(legacy).
+    \item[Databases] PostgreSQL, MySQL.
+    \item[Cloud/DevOps] AWS, Docker, Jenkins, GitHub Actions.
+\end{description}
+
+%======== Work Experience Section ========
 \section{Experience}
-%=================%
+
+% SKUify Limited
 \subsection{SKUify Limited \hfill United Kingdom - Remote}
-\subsubsection{Full Stack Engineer \hfill  December 2023 - December 2024}
+\subsubsection{Full Stack Engineer \hfill  Dec 2023 -- Dec 2024}
 \begin{itemize}
-    \item Optimized PostgreSQL performance by partitioning high-volume tables, reducing query latency by 30\% and improving API response times by 50\%.
-    \item Built seller analytics dashboards using Amazon SP-API, automating sales reports and enhancing data-driven decisions for 500+ users.
-    \item Maintained CI/CD pipelines (Jenkins) for zero-downtime deployments, improving release efficiency by 20\%.
-
-    \paragraph{Project Tech Stack:} Python, Django, Django REST Framework, React, PostgreSQL, Celery, Jenkins, Amazon SP-API
+    \item \textbf{Database Optimization:} Partitioned PostgreSQL tables for high-volume datasets, reducing query latency by 30\% and improving API response times by 50\%.
+    \item \textbf{Seller Analytics:} Built dashboards integrating Amazon SP-API, automating sales reports for 500+ users and enhancing decision making.
+    \item \textbf{CI/CD:} Maintained Jenkins workflows for zero-downtime deployments, improving release efficiency by 20\%.
 \end{itemize}
+\techstack{Python, Django, React, PostgreSQL, Digital Ocean, Celery, Jenkins}
 
+
+% FreeCast Inc
 \subsection{FreeCast Inc \hfill United States of America - Remote}
-\subsubsection{Back-end Engineer \hfill  September 2022 - November 2023}
+\subsubsection{Back-end Engineer \hfill  Sep 2022 -- Nov 2023}
 \begin{itemize}
-    \item Migrated REST APIs from Django to FastAPI, increasing throughput by 40\% (RPS) and reducing latency.
-    \item Deployed serverless microservices on AWS Lambda (Docker), cutting infrastructure costs by 25\%.
-    \item Actively participated in collaborating with cross-functional teams to ensure alignment with Agile methodologies.
-
-    \paragraph{Project Tech Stack:} Python, FastAPI, Django, Django REST Framework, Serverless, Microservices, MySQL, Docker, GitHub Actions
+    \item \textbf {API Performance:} Migrated REST APIs from Django REST Framework to FastAPI, increasing throughput by 40\% (RPS) and reducing latency.
+    \item \textbf {Microservices Architecture:} Deployed serverless endpoints on AWS Lambda using Docker containerization, cutting infrastructure costs by 25\%.
+    \item \textbf {Agile Development:} Collaborated cross-functionally in 2-week sprints to deliver features.
 \end{itemize}
+\techstack{Python, FastAPI, Django, AWS Lambda, MySQL, Docker, GitHub Actions}
 
+
+% SumSoftware Limited
 \subsection{Sum Software Limited \hfill United Kingdom - Remote}
-\subsubsection{Full Stack Engineer \hfill  November 2021 - July 2022}
+\subsubsection{Full Stack Engineer \hfill  Nov 2021 -- Jul 2022}
 \begin{itemize}
-    \item Built the "Journey" component of the Sumfully SaaS, streamlining inventory management for Amazon and Arbitrage sellers, incorporating feedback from stakeholders to align with the evolving software development practices.
-    \item Developed custom Python scripts that generated report data from Amaon Marketplace Web Service (MWS) that was SOAP based API.
-
-    \paragraph{Project Tech Stack:} Python, Django, Django REST Framework, React, PostgreSQL, Celery, Jenkins
+    \item \textbf{Feature Development:} Built the "Journey" component of the Sumfully SaaS, streamlining inventory management for Amazon and Arbitrage sellers.
+    \item \textbf{Report Generation:} Developed custom Python scripts that generated report data from Amazon Marketplace Web Service (MWS) that was SOAP based API.
 \end{itemize}
+\techstack{Python, Django, Django REST Framework, React, PostgreSQL, Celery, Jenkins}
 
 
 \subsection{World Bank Group \hfill United States of America - Remote}
-\subsubsection{Technical Consultant \hfill  December 2021 - January 2022}
+\subsubsection{Technical Consultant \hfill  Dec 2021 -- Jan 2022}
 \begin{itemize}
-    \item Led the development of the Personal Case Based Teaching (PCBT) prototype that aimed to analyze past judgments in courts of law in a bid to determine judgmental bias. This project involved the use of monitoring tools to track performance and operations.
-
-    \paragraph{Project Tech Stack:} Python, Django, Django REST Framework, React, PostgreSQL, Celery, Jenkins
+    \item \textbf{Legal Analytics Prototype:} Developed a tool to analyze 10,000+ court judgments for bias detection using Python/Django.
 \end{itemize}
+\techstack{Python, Django, React, MySQL}
 
 
 \subsection{Maxum Data Limited \hfill New Zealand - Remote}
-\subsubsection{Lead Developer \hfill  June 2015 - October 2021}
+\subsubsection{Lead Developer \hfill  Jun 2015 -- Oct 2021}
 \begin{itemize}
-    \item Developed the mPort project that tracked mobile phone number portability across mobile network operators in New Zealand, resulting in seamless mobile network operator migration.
-    \item Developed a search tool for custom Toll Free numbers that lead to an increase in toll free number uptake from users.
-    \item Wrote Lua scripts that allowed customization of Freeswitch, simplifying customization tasks for the network operation team 
-
-    \paragraph{Project Tech Stack:} Python, Django, MySQL, Lua,
+    \item \textbf{mPort System:} Built mobile number portability tracker that facilitated seamless network operator migration for 10,000+ users.
+    \item \textbf{Tool-Free Number Search: } Created a search tool increasing toll-free number adoption by 35\%.
+    \item \textbf{Customization} Wrote Lua scripts for FreeSwtich, reducing network team's setup and customization time by 50\%
 \end{itemize}
+\techstack{Python, Django, MySQL, Lua}
+
 
 \subsection{Domains Bot \hfill Italy - Remote}
-\subsubsection{Senior Python Engineer \hfill  June 2015 - September 2015}
+\subsubsection{Senior Python Engineer \hfill  Jun 2015 - Sep 2015}
 \begin{itemize}
-    \item Played a key role in the database redesign and upgrade on the Domains Bot project leading to 10\% in faster database queries and shorter API response times.
-
-    \paragraph{Project Tech Stack:} Python, Django, MySQL
+    \item Redesigned database schema, improving query speed by 10\%.
 \end{itemize}
+\techstack{Python, Django, MySQL}
+
 
 \subsection{SunUp Financial LLC \hfill United States - Remote}
-\subsubsection{Senior Python Engineer \hfill  May 2014 - January 2015}
+\subsubsection{Senior Python Engineer \hfill  May 2014 -- Jan 2015}
 \begin{itemize}
     \item Worked on the development of the "Balance Credit" web project that created the on-boarding process for customers of the Company's Pay Day loans product, emphasizing with the design team to enhance user experience.
-
-    \paragraph{Project Tech Stack:} Python, Django, MySQL, JQuery
 \end{itemize}
+\techstack{Python, Django, MySQL, jQuery}
+
 
 \subsection{Soko Inc. \hfill Nairobi, Kenya}
-\subsubsection{Senior Python Engineer \hfill  July 2013 - April 2014}
+\subsubsection{Senior Python Engineer \hfill  Jul 2013 -- Apr 2014}
 \begin{itemize}
-    \item Led the development of a Android mobile application for Soko Artisans.
-    \item Participated in REST API development on the project that were used on by the Mobile application.
-    \item Worked on the transition of the Soko web project from Django Framework to the Pyramid Web Framework.
-
-    \paragraph{Project Tech Stack:} Python, Django, Django REST Framework, Pyramid Framework, MySQL, Android.
+    \item \textbf{Mobile App:} Led the development of a Android app for Soko Artisans.
+    \item \textbf{REST API:} Participated in REST API development on the project that were used on by the Mobile application.
+    \item \textbf{Framework Migration:} Worked on the transition of the Soko web project from Django Framework to the Pyramid Web Framework.
 \end{itemize}
+\techstack{Python, Django, Django REST Framework, Pyramid Framework, MySQL, Android}
 
 \subsection{Sweet Relish LLC \hfill USA, Remote}
-\subsubsection{Senior Python Engineer \hfill  December 2012 - July 2013}
+\subsubsection{Senior Python Engineer \hfill  Dec 2012 - Jul 2013}
 \begin{itemize}
-    \item Worked on the Sweet Relish mobile website that was based on JQuery mobile.
-    \item Contributed bug fixes on the project, enhancing overall application performance.
-
-    \paragraph{Project Tech Stack:} Python, Django, MySQL
+    \item Fixed critical bugs on jQuery Mobile application, enhancing performance.
 \end{itemize}
+\techstack{Python, Django, MySQL}
 
 \subsection{Code Painters LLC \hfill USA, Remote}
-\subsubsection{Lead Engineer \hfill  September 2012 - November 2012}
+\subsubsection{Lead Engineer \hfill  Sep 2012 - Nov 2012}
 \begin{itemize}
     \item Led the development Gym management website that included subscription management and gym session reservation.
-
-    \paragraph{Project Tech Stack:} Python, Django, MySQL, JQuery
 \end{itemize}
+\techstack{Python, Django, MySQL, jQuery}
 
 \subsection{Apartment Rentals \hfill USA, Remote}
-\subsubsection{Python Engineer \hfill  April 2012}
+\subsubsection{Python Engineer \hfill  Apr 2012}
 \begin{itemize}
     \item Worked on bug fixes to the project
-    \paragraph{Project Tech Stack:} Python, Django, MySQL, JQuery
 \end{itemize}
+\techstack{Python, Django, MySQL, jQuery}
 
 \subsection{MANteresting \hfill USA, Remote}
-\subsubsection{Django Developer \hfill  March 2012 - April 2012}
+\subsubsection{Django Developer \hfill  Mar 2012 - Apr 2012}
 \begin{itemize}
     \item Led the development of version 1 of MANteresting REST APIs that were used on the mobile version of the project, ensuring adherence to Agile methods.
-    \item Worked on bug fixes
-    \paragraph{Project Tech Stack:} Python, Django, REST API, MySQL, JQuery
 \end{itemize}
+\techstack{Python, Django, REST API, MySQL, jQuery}
 
 \subsection{Alliance Technologies Limited \hfill Nairobi, Kenya}
-\subsubsection{Software Engineer - Intern \hfill  September 2011 - December 2011}
+\subsubsection{Software Engineer - Intern \hfill  Sep 2011 - Dec 2011}
 \begin{itemize}
     \item Developed a mobile version proof of concept for the A1 ERP. 
-    \paragraph{Project Tech Stack:} Java, J2ME, PostgreSQL
 \end{itemize}
+\techstack{Java, J2ME, PostgreSQL}
 
 \section{Education}
 %=================%
@@ -164,14 +192,7 @@ Senior Full-Stack Engineer | Python · Agile · Cloud (AWS)
 \section{Certification \& Awards}
 %===============================%
 \begin{enumerate}[label=\null, left=0pt..0pt, itemsep=0pt]
-        \item Kotlin for Java Developers, Coursera. \hfill 2019
+    \item Kotlin for Java Developers, Coursera. \hfill 2019
 \end{enumerate}
-
-\section{Skills \& Interests}
-%===========================%
-\begin{description}[itemsep=0pt]
-        \item[Technical] Python, Django, MySQL, PostgreSQL, JavaScript, React Js, Next Js, Linux, Open Source Software. 
-        \item[Interests] Chess
-\end{description}
 
 \end{document}
