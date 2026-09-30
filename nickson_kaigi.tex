@@ -1,49 +1,42 @@
-\documentclass[11pt]{article} % fontsize 10pt/11pt/12pt
+\documentclass[11pt]{article}
 \usepackage[margin=1in, a4paper]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage{calc}
-
 \usepackage{hyperref}
+
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     urlcolor=blue,
     pdftitle={Nickson Kaigi - Resume},
-    pdfencoding=auto,
-    psdextra,
     pdfauthor={Nickson Kaigi},
     pdfsubject={Software Engineer Resume},
     pdfkeywords={Python, Django, PostgreSQL, AWS, React},
     bookmarksopen=true,
-    bookmarksdepth=2,
 }
 
-\setcounter{secnumdepth}{0} % remove section numbering
-\titlespacing{\subsection}{0pt}{*0}{*0} % remove vertical spacing above and below
-\titlespacing{\subsubsection}{0pt}{*0}{*0}
-\titleformat{\section}{\large\bfseries\uppercase}{}{}{}[\titlerule]
-\titleformat*{\subsubsection}{\large\itshape}
-\setlist[itemize]{
-    noitemsep,          % No extra space between items
-    topsep=4pt,         % Space above/below list
-    leftmargin=1.5em    % Indentation
-}
-
-\newcommand \techstack [1]
-    {\small\textit{Tech Stack: {#1}}} % New tech stack command
-
-\pagestyle{empty} % remove page number
+% Make the PDF text searchable / copyable (pdfLaTeX only)
+\input{glyphtounicode}
 \pdfgentounicode=1
 
+\pagestyle{empty}            % no page numbers
+\setcounter{secnumdepth}{0}  % no section numbering
+
+\titleformat{\section}{\large\bfseries\uppercase}{}{}{}[\titlerule]
+\setlist[itemize]{noitemsep, topsep=4pt, leftmargin=1.5em}
+
+% --- Resume entry macros -----------------------------------------------
+% These are plain paragraphs, NOT sectioning commands, so \hfill never
+% ends up in the PDF bookmarks (which caused the hyperref warning).
+\newcommand{\employer}[2]{\noindent{\large\bfseries #1 \hfill #2\par}\nopagebreak}
+\newcommand{\role}[2]{\noindent{\large\itshape #1 \hfill #2\par}\nopagebreak}
+\newcommand{\techstack}[1]{{\small\textit{Tech Stack: #1}}\par\vspace{0.8em}}
 
 \begin{document}
 
 \begin{center}
     \begin{minipage}{0.5\textwidth}
-    {\Huge\bfseries
-        \texorpdfstring{Nickson Kaigi}{Nickson Kaigi}
-        } \\ \medskip
+    {\Huge\bfseries Nickson Kaigi}\\ \medskip
         Software Engineer
     \end{minipage} \hfill
     \begin{minipage}{0.4\textwidth}
@@ -57,18 +50,16 @@
 \end{center}
 
 \section{Professional Profile}
-%============================%
 \begin{itemize}
-    \item Results-driven \textbf{Full-Stack Python Engineer} with decade of experience building \textbf{high-performance SaaS solutions}
+    \item Results-driven \textbf{Full-Stack Python Engineer} with a decade of experience building \textbf{high-performance SaaS solutions}
     \item Specialized in \textbf{Database optimization}, \textbf{CI/CD pipelines}, and \textbf{API integration}
     \item Adept at leading technical projects from concept to deployment using \textbf{Agile methodologies} and \textbf{cloud architecture}
 \end{itemize}
 
 \section{Technical Expertise}
-%===========================%
 \begin{description}
     \item[Backend] Python, Django, FastAPI, Django REST Framework, Celery.
-    \item[Frontend] React, Next.js, jQuery(legacy).
+    \item[Frontend] React, Next.js, jQuery (legacy).
     \item[Databases] PostgreSQL, MySQL.
     \item[Cloud/DevOps] AWS, Docker, Jenkins, GitHub Actions.
 \end{description}
@@ -77,142 +68,126 @@
 \section{Experience}
 
 % SKUify Limited
-\subsection{SKUify Limited \hfill United Kingdom - Remote}
-\subsubsection{Full Stack Engineer \hfill  Dec 2023 -- Dec 2024}
+\employer{SKUify Limited}{United Kingdom - Remote}
+\role{Full Stack Engineer}{Dec 2023 -- Dec 2024}
 \begin{itemize}
     \item \textbf{Database Optimization:} Partitioned PostgreSQL tables for high-volume datasets, reducing query latency by 30\% and improving API response times by 50\%.
     \item \textbf{Seller Analytics:} Built dashboards integrating Amazon SP-API, automating sales reports for 500+ users and enhancing decision making.
     \item \textbf{CI/CD:} Maintained Jenkins workflows for zero-downtime deployments, improving release efficiency by 20\%.
 \end{itemize}
 \techstack{Python, Django, React, PostgreSQL, Digital Ocean, Celery, Jenkins}
-\vspace{0.8em}
 
 % FreeCast Inc
-\subsection{FreeCast Inc \hfill United States of America - Remote}
-\subsubsection{Back-end Engineer \hfill  Sep 2022 -- Nov 2023}
+\employer{FreeCast Inc}{United States of America - Remote}
+\role{Back-end Engineer}{Sep 2022 -- Nov 2023}
 \begin{itemize}
-    \item \textbf {API Performance:} Migrated REST APIs from Django REST Framework to FastAPI, increasing throughput by 40\% (RPS) and reducing latency.
-    \item \textbf {Microservices Architecture:} Deployed serverless endpoints on AWS Lambda using Docker containerization, cutting infrastructure costs by 25\%.
-    \item \textbf {Agile Development:} Collaborated cross-functionally in 2-week sprints to deliver features.
+    \item \textbf{API Performance:} Migrated REST APIs from Django REST Framework to FastAPI, increasing throughput by 40\% (RPS) and reducing latency.
+    \item \textbf{Microservices Architecture:} Deployed serverless endpoints on AWS Lambda using Docker containerization, cutting infrastructure costs by 25\%.
+    \item \textbf{Agile Development:} Collaborated cross-functionally in 2-week sprints to deliver features.
 \end{itemize}
 \techstack{Python, FastAPI, Django, AWS Lambda, MySQL, Docker, GitHub Actions}
-\vspace{0.8em}
 
 % SumSoftware Limited
-\subsection{Sum Software Limited \hfill United Kingdom - Remote}
-\subsubsection{Full Stack Engineer \hfill  Nov 2021 -- Jul 2022}
+\employer{Sum Software Limited}{United Kingdom - Remote}
+\role{Full Stack Engineer}{Nov 2021 -- Jul 2022}
 \begin{itemize}
-    \item \textbf{Feature Development:} Built the "Journey" component of the Sumfully SaaS, streamlining inventory management for Amazon and Arbitrage sellers.
+    \item \textbf{Feature Development:} Built the ``Journey'' component of the Sumfully SaaS, streamlining inventory management for Amazon and Arbitrage sellers.
     \item \textbf{Report Generation:} Developed custom Python scripts that generated report data from Amazon Marketplace Web Service (MWS) that was SOAP based API.
 \end{itemize}
 \techstack{Python, Django, Django REST Framework, React, PostgreSQL, Celery, Jenkins}
-\vspace{0.8em}
 
 % World Bank Group
-\subsection{World Bank Group \hfill United States of America - Remote}
-\subsubsection{Technical Consultant \hfill  Dec 2021 -- Jan 2022}
+\employer{World Bank Group}{United States of America - Remote}
+\role{Technical Consultant}{Dec 2021 -- Jan 2022}
 \begin{itemize}
     \item \textbf{Legal Analytics Prototype:} Developed a tool to analyze 10,000+ court judgments for bias detection using Python/Django.
 \end{itemize}
 \techstack{Python, Django, React, MySQL}
-\vspace{0.8em}
 
 % Maxum Data Limited
-\subsection{Maxum Data Limited \hfill New Zealand - Remote}
-\subsubsection{Lead Developer \hfill  Jun 2015 -- Oct 2021}
+\employer{Maxum Data Limited}{New Zealand - Remote}
+\role{Lead Developer}{Jun 2015 -- Oct 2021}
 \begin{itemize}
     \item \textbf{mPort System:} Built mobile number portability tracker that facilitated seamless network operator migration for 10,000+ users.
-    \item \textbf{Tool-Free Number Search: } Created a search tool increasing toll-free number adoption by 35\%.
-    \item \textbf{Customization} Wrote Lua scripts for FreeSwtich, reducing network team's setup and customization time by 50\%
+    \item \textbf{Toll-Free Number Search:} Created a search tool increasing toll-free number adoption by 35\%.
+    \item \textbf{Customization:} Wrote Lua scripts for FreeSwitch, reducing network team's setup and customization time by 50\%
 \end{itemize}
 \techstack{Python, Django, MySQL, Lua}
-\vspace{0.8em}
 
 % Domains Bot
-\subsection{Domains Bot \hfill Italy - Remote}
-\subsubsection{Senior Python Engineer \hfill  Jun 2015 - Sep 2015}
+\employer{Domains Bot}{Italy - Remote}
+\role{Senior Python Engineer}{Jun 2015 -- Sep 2015}
 \begin{itemize}
     \item Redesigned database schema, improving query speed by 10\%.
 \end{itemize}
 \techstack{Python, Django, MySQL}
-\vspace{0.8em}
 
 % SunUp Financial LLC
-\subsection{SunUp Financial LLC \hfill United States - Remote}
-\subsubsection{Senior Python Engineer \hfill  May 2014 -- Jan 2015}
+\employer{SunUp Financial LLC}{United States - Remote}
+\role{Senior Python Engineer}{May 2014 -- Jan 2015}
 \begin{itemize}
-    \item Worked on the development of the "Balance Credit" web project that created the on-boarding process for customers of the Company's Pay Day loans product, emphasizing with the design team to enhance user experience.
+    \item Worked on the development of the ``Balance Credit'' web project that created the on-boarding process for customers of the Company's Pay Day loans product, collaborating with the design team to enhance user experience.
 \end{itemize}
 \techstack{Python, Django, MySQL, jQuery}
-\vspace{0.8em}
 
 % Soko Inc
-\subsection{Soko Inc. \hfill Nairobi, Kenya}
-\subsubsection{Senior Python Engineer \hfill  Jul 2013 -- Apr 2014}
+\employer{Soko Inc.}{Nairobi, Kenya}
+\role{Senior Python Engineer}{Jul 2013 -- Apr 2014}
 \begin{itemize}
     \item \textbf{Mobile App:} Led the development of a Android app for Soko Artisans.
     \item \textbf{REST API:} Participated in REST API development on the project that were used on by the Mobile application.
     \item \textbf{Framework Migration:} Worked on the transition of the Soko web project from Django Framework to the Pyramid Web Framework.
 \end{itemize}
 \techstack{Python, Django, Django REST Framework, Pyramid Framework, MySQL, Android}
-\vspace{0.8em}
 
 % Sweet Relish LLC
-\subsection{Sweet Relish LLC \hfill USA, Remote}
-\subsubsection{Senior Python Engineer \hfill  Dec 2012 - Jul 2013}
+\employer{Sweet Relish LLC}{USA, Remote}
+\role{Senior Python Engineer}{Dec 2012 -- Jul 2013}
 \begin{itemize}
     \item Fixed critical bugs on jQuery Mobile application, enhancing performance.
 \end{itemize}
 \techstack{Python, Django, MySQL}
-\vspace{0.8em}
 
 % Code Painters LLC
-\subsection{Code Painters LLC \hfill USA, Remote}
-\subsubsection{Lead Engineer \hfill  Sep 2012 - Nov 2012}
+\employer{Code Painters LLC}{USA, Remote}
+\role{Lead Engineer}{Sep 2012 -- Nov 2012}
 \begin{itemize}
     \item Led the development Gym management website that included subscription management and gym session reservation.
 \end{itemize}
 \techstack{Python, Django, MySQL, jQuery}
-\vspace{0.8em}
 
 % Apartment Rentals
-\subsection{Apartment Rentals \hfill USA, Remote}
-\subsubsection{Python Engineer \hfill  Apr 2012}
+\employer{Apartment Rentals}{USA, Remote}
+\role{Python Engineer}{Apr 2012}
 \begin{itemize}
     \item Worked on bug fixes to the project
 \end{itemize}
 \techstack{Python, Django, MySQL, jQuery}
-\vspace{0.8em}
 
 % Manteresing LLC
-\subsection{MANteresting \hfill USA, Remote}
-\subsubsection{Django Developer \hfill  Mar 2012 - Apr 2012}
+\employer{MANteresting}{USA, Remote}
+\role{Django Developer}{Mar 2012 -- Apr 2012}
 \begin{itemize}
     \item Led the development of version 1 of MANteresting REST APIs that were used on the mobile version of the project, ensuring adherence to Agile methods.
 \end{itemize}
 \techstack{Python, Django, REST API, MySQL, jQuery}
-\vspace{0.8em}
 
 % Alliance Technologies
-\subsection{Alliance Technologies Limited \hfill Nairobi, Kenya}
-\subsubsection{Software Engineer - Intern \hfill  Sep 2011 - Dec 2011}
+\employer{Alliance Technologies Limited}{Nairobi, Kenya}
+\role{Software Engineer - Intern}{Sep 2011 -- Dec 2011}
 \begin{itemize}
-    \item Developed a mobile version proof of concept for the A1 ERP. 
+    \item Developed a mobile version proof of concept for the A1 ERP.
 \end{itemize}
 \techstack{Java, J2ME, PostgreSQL}
-\vspace{0.8em}
 
 \section{Education}
-%=================%
-\subsection{Jomo Kenyatta University of Agriculture and Technology $|$ {\normalfont\itshape Bsc. Computer Science} \hfill 2012}
+\employer{Jomo Kenyatta University of Agriculture and Technology $|$ {\normalfont\itshape BSc Computer Science}}{2012}
 \begin{itemize}
     \item Second Class Honors, Upper Division
     \item Coursework: Computer Programming, Data Structures and Algorithms, Database Management, Computer Security
 \end{itemize}
 
-
-\section{Certification \& Awards}
-%===============================%
+\section{Certifications \& Awards}
 \begin{enumerate}[label=\null, left=0pt..0pt, itemsep=0pt]
     \item Kotlin for Java Developers, Coursera. \hfill 2019
 \end{enumerate}
