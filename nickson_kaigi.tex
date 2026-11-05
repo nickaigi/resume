@@ -31,6 +31,8 @@
 \newcommand{\employer}[2]{\noindent{\large\bfseries #1 \hfill #2\par}\nopagebreak}
 \newcommand{\role}[2]{\noindent{\large\itshape #1 \hfill #2\par}\nopagebreak}
 \newcommand{\techstack}[1]{{\small\textit{Tech Stack: #1}}\par\vspace{0.8em}}
+% Compact one-entry-per-item format for older roles: company, role, dates, one-liner
+\newcommand{\earlier}[4]{\item \textbf{#1} -- \textit{#2} \hfill #3\\ #4}
 
 \begin{document}
 
@@ -51,14 +53,15 @@
 
 \section{Professional Profile}
 \begin{itemize}
-    \item Results-driven \textbf{Full-Stack Python Engineer} with a decade of experience building \textbf{high-performance SaaS solutions}
-    \item Specialized in \textbf{Database optimization}, \textbf{CI/CD pipelines}, and \textbf{API integration}
-    \item Adept at leading technical projects from concept to deployment using \textbf{Agile methodologies} and \textbf{cloud architecture}
+    \item Results-driven \textbf{Full-Stack Python Engineer} with a decade of experience building \textbf{high-performance SaaS solutions} and \textbf{LLM-powered features}.
+    \item Specialized in \textbf{LLM integration}, \textbf{database optimization}, \textbf{CI/CD pipelines}, and \textbf{API integration}.
+    \item Adept at leading technical projects from concept to deployment using \textbf{Agile methodologies} and \textbf{cloud architecture}.
 \end{itemize}
 
 \section{Technical Expertise}
 \begin{description}
     \item[Backend] Python, Django, FastAPI, Django REST Framework, Celery.
+    \item[AI/Data] LLM integration (OpenAI, Ollama), ChromaDB, Pandas, recommender systems.
     \item[Frontend] React, Next.js, jQuery (legacy).
     \item[Databases] PostgreSQL, MySQL.
     \item[Cloud/DevOps] AWS, Docker, Jenkins, GitHub Actions.
@@ -67,8 +70,18 @@
 %======== Work Experience Section ========
 \section{Experience}
 
+% Independent consulting
+\employer{Independent Technical Consultant}{Kenya -- Remote}
+\role{Python / AI Engineer}{Jan 2025 -- Present}
+\begin{itemize}
+    \item \textbf{Recommender Systems:} Designed and built recommendation engines for client projects using Pandas and ChromaDB vector embeddings.
+    \item \textbf{LLM Integration:} Added AI-generated summaries to existing blog platforms using OpenAI and self-hosted Ollama models.
+    \item \textbf{Delivery:} Handled design, deployment, and CI/CD (Jenkins) end to end across short, fixed-scope contracts.
+\end{itemize}
+\techstack{Python, Django, Pandas, PostgreSQL, ChromaDB, OpenAI, Ollama, Celery, Jenkins}
+
 % SKUify Limited
-\employer{SKUify Limited}{United Kingdom - Remote}
+\employer{SKUify Limited}{United Kingdom -- Remote}
 \role{Full Stack Engineer}{Dec 2023 -- Dec 2024}
 \begin{itemize}
     \item \textbf{Database Optimization:} Partitioned PostgreSQL tables for high-volume datasets, reducing query latency by 30\% and improving API response times by 50\%.
@@ -78,113 +91,68 @@
 \techstack{Python, Django, React, PostgreSQL, Digital Ocean, Celery, Jenkins}
 
 % FreeCast Inc
-\employer{FreeCast Inc}{United States of America - Remote}
+\employer{FreeCast Inc}{United States -- Remote}
 \role{Back-end Engineer}{Sep 2022 -- Nov 2023}
 \begin{itemize}
     \item \textbf{API Performance:} Migrated REST APIs from Django REST Framework to FastAPI, increasing throughput by 40\% (RPS) and reducing latency.
-    \item \textbf{Microservices Architecture:} Deployed serverless endpoints on AWS Lambda using Docker containerization, cutting infrastructure costs by 25\%.
+    \item \textbf{Microservices Architecture:} Deployed serverless AWS Lambda endpoints with Docker, cutting infrastructure costs by 25\%.
     \item \textbf{Agile Development:} Collaborated cross-functionally in 2-week sprints to deliver features.
 \end{itemize}
 \techstack{Python, FastAPI, Django, AWS Lambda, MySQL, Docker, GitHub Actions}
 
-% SumSoftware Limited
-\employer{Sum Software Limited}{United Kingdom - Remote}
+% Sum Software Limited
+\employer{Sum Software Limited}{United Kingdom -- Remote}
 \role{Full Stack Engineer}{Nov 2021 -- Jul 2022}
 \begin{itemize}
     \item \textbf{Feature Development:} Built the ``Journey'' component of the Sumfully SaaS, streamlining inventory management for Amazon and Arbitrage sellers.
-    \item \textbf{Report Generation:} Developed custom Python scripts that generated report data from Amazon Marketplace Web Service (MWS) that was SOAP based API.
+    \item \textbf{Report Generation:} Developed custom Python scripts that generated report data from the SOAP-based Amazon Marketplace Web Service (MWS) API.
 \end{itemize}
 \techstack{Python, Django, Django REST Framework, React, PostgreSQL, Celery, Jenkins}
 
 % World Bank Group
-\employer{World Bank Group}{United States of America - Remote}
-\role{Technical Consultant}{Dec 2021 -- Jan 2022}
+\employer{World Bank Group}{United States -- Remote}
+\role{Technical Consultant (Contract)}{Dec 2021 -- Jan 2022}
 \begin{itemize}
     \item \textbf{Legal Analytics Prototype:} Developed a tool to analyze 10,000+ court judgments for bias detection using Python/Django.
 \end{itemize}
 \techstack{Python, Django, React, MySQL}
 
 % Maxum Data Limited
-\employer{Maxum Data Limited}{New Zealand - Remote}
+\employer{Maxum Data Limited}{New Zealand -- Remote}
 \role{Lead Developer}{Jun 2015 -- Oct 2021}
 \begin{itemize}
     \item \textbf{mPort System:} Built mobile number portability tracker that facilitated seamless network operator migration for 10,000+ users.
     \item \textbf{Toll-Free Number Search:} Created a search tool increasing toll-free number adoption by 35\%.
-    \item \textbf{Customization:} Wrote Lua scripts for FreeSwitch, reducing network team's setup and customization time by 50\%
+    \item \textbf{Customization:} Wrote Lua scripts for FreeSwitch, reducing network team's setup and customization time by 50\%.
 \end{itemize}
 \techstack{Python, Django, MySQL, Lua}
 
-% Domains Bot
-\employer{Domains Bot}{Italy - Remote}
-\role{Senior Python Engineer}{Jun 2015 -- Sep 2015}
-\begin{itemize}
-    \item Redesigned database schema, improving query speed by 10\%.
+\section{Earlier Experience}
+\begin{itemize}[itemsep=4pt]
+    \earlier{Domains Bot}{Senior Python Engineer}{Jun 2015 -- Sep 2015}
+        {Redesigned the database schema, improving query speed by 10\%.}
+    \earlier{SunUp Financial LLC}{Senior Python Engineer}{May 2014 -- Jan 2015}
+        {Built the ``Balance Credit'' on-boarding flow for the company's Pay Day loans product, collaborating with the design team to enhance user experience.}
+    \earlier{Soko Inc.}{Senior Python Engineer}{Jul 2013 -- Apr 2014}
+        {Led development of an Android app for Soko Artisans, contributed to the REST API it consumed, and helped migrate the web project from Django to Pyramid.}
+    \earlier{Sweet Relish LLC}{Senior Python Engineer}{Dec 2012 -- Jul 2013}
+        {Fixed critical bugs in a jQuery Mobile application, enhancing performance.}
+    \earlier{Code Painters LLC}{Lead Engineer}{Sep 2012 -- Nov 2012}
+        {Led development of a gym management website with subscription management and session reservations.}
+    \earlier{Apartment Rentals}{Python Engineer}{Apr 2012}
+        {Fixed bugs in the project's Django codebase.}
+    \earlier{MANteresting}{Django Developer}{Mar 2012 -- Apr 2012}
+        {Led development of version 1 of the REST APIs used by the mobile version of the project, following Agile methods.}
+    \earlier{Alliance Technologies Limited}{Software Engineer Intern}{Sep 2011 -- Dec 2011}
+        {Developed a mobile proof of concept for the A1 ERP using Java and J2ME.}
 \end{itemize}
-\techstack{Python, Django, MySQL}
-
-% SunUp Financial LLC
-\employer{SunUp Financial LLC}{United States - Remote}
-\role{Senior Python Engineer}{May 2014 -- Jan 2015}
-\begin{itemize}
-    \item Worked on the development of the ``Balance Credit'' web project that created the on-boarding process for customers of the Company's Pay Day loans product, collaborating with the design team to enhance user experience.
-\end{itemize}
-\techstack{Python, Django, MySQL, jQuery}
-
-% Soko Inc
-\employer{Soko Inc.}{Nairobi, Kenya}
-\role{Senior Python Engineer}{Jul 2013 -- Apr 2014}
-\begin{itemize}
-    \item \textbf{Mobile App:} Led the development of a Android app for Soko Artisans.
-    \item \textbf{REST API:} Participated in REST API development on the project that were used on by the Mobile application.
-    \item \textbf{Framework Migration:} Worked on the transition of the Soko web project from Django Framework to the Pyramid Web Framework.
-\end{itemize}
-\techstack{Python, Django, Django REST Framework, Pyramid Framework, MySQL, Android}
-
-% Sweet Relish LLC
-\employer{Sweet Relish LLC}{USA, Remote}
-\role{Senior Python Engineer}{Dec 2012 -- Jul 2013}
-\begin{itemize}
-    \item Fixed critical bugs on jQuery Mobile application, enhancing performance.
-\end{itemize}
-\techstack{Python, Django, MySQL}
-
-% Code Painters LLC
-\employer{Code Painters LLC}{USA, Remote}
-\role{Lead Engineer}{Sep 2012 -- Nov 2012}
-\begin{itemize}
-    \item Led the development Gym management website that included subscription management and gym session reservation.
-\end{itemize}
-\techstack{Python, Django, MySQL, jQuery}
-
-% Apartment Rentals
-\employer{Apartment Rentals}{USA, Remote}
-\role{Python Engineer}{Apr 2012}
-\begin{itemize}
-    \item Worked on bug fixes to the project
-\end{itemize}
-\techstack{Python, Django, MySQL, jQuery}
-
-% Manteresing LLC
-\employer{MANteresting}{USA, Remote}
-\role{Django Developer}{Mar 2012 -- Apr 2012}
-\begin{itemize}
-    \item Led the development of version 1 of MANteresting REST APIs that were used on the mobile version of the project, ensuring adherence to Agile methods.
-\end{itemize}
-\techstack{Python, Django, REST API, MySQL, jQuery}
-
-% Alliance Technologies
-\employer{Alliance Technologies Limited}{Nairobi, Kenya}
-\role{Software Engineer - Intern}{Sep 2011 -- Dec 2011}
-\begin{itemize}
-    \item Developed a mobile version proof of concept for the A1 ERP.
-\end{itemize}
-\techstack{Java, J2ME, PostgreSQL}
 
 \section{Education}
-\employer{Jomo Kenyatta University of Agriculture and Technology $|$ {\normalfont\itshape BSc Computer Science}}{2012}
+\employer{Jomo Kenyatta University of Agriculture and Technology}{2012}
+\role{BSc Computer Science}{}
 \begin{itemize}
-    \item Second Class Honors, Upper Division
-    \item Coursework: Computer Programming, Data Structures and Algorithms, Database Management, Computer Security
+    \item Second Class Honors, Upper Division.
+    \item Coursework: Computer Programming, Data Structures and Algorithms, Database Management, Computer Security.
 \end{itemize}
 
 \section{Certifications \& Awards}
